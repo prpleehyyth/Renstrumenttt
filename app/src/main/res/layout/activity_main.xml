@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iconIv"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/logo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iconIv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Welcome to Rentstrument"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="348dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnSignin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:backgroundTintMode="multiply"
+        android:text="Login" />
+
+    <Button
+        android:id="@+id/btnSignin"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp"
+        android:background="@drawable/shape_button02"
+        android:text="Sign Up"
+        android:textColor="@color/black" />
+
+
+</RelativeLayout>
