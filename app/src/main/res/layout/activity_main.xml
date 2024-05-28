@@ -43,6 +43,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="33dp"
         android:background="@drawable/shape_button02"
+        android:backgroundTint="@color/white"
         android:text="Sign Up"
         android:textColor="@color/black" />
 
