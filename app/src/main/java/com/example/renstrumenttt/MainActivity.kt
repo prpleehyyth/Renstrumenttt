@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        binding.btnSignin.setOnClickListener {
+        binding.btnSignup.setOnClickListener {
 
         }
 
