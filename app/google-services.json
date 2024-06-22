@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "969391460068",
+    "project_id": "rentstrumenttt",
+    "storage_bucket": "rentstrumenttt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969391460068:android:9d7fb335754eb280d8e6f1",
+        "android_client_info": {
+          "package_name": "com.example.renstrumenttt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLRAbkF_7yhIAi7fDjqdWQ2NFr9LEz9LY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
