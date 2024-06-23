@@ -36,7 +36,7 @@
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif-condensed"
-        android:text="Renstrument"
+        android:text="Rentstrument"
         android:textColor="@color/black"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="154dp"
