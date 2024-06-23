@@ -1,17 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     tools:context=".SplashActivity">
 
+
     <ImageView
+        android:id="@+id/oval3_shape"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-75dp"
+        android:layout_marginLeft="-20dp"
+        android:layout_marginRight="-45dp"
+        android:background="@drawable/oval1"
+        android:rotation="168" />
+
+    <ImageView
+        android:id="@+id/oval2_shape"
+        android:layout_width="126dp"
+        android:layout_height="274dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="269dp"
+        android:layout_marginTop="-120dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/oval2"
+        android:rotation="-60" />
+
+    <ImageView
+        android:id="@+id/oval_shape"
+        android:layout_width="500dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-164dp"
+        android:layout_marginTop="-65dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:rotation="-20"
+        android:background="@drawable/oval1" />
+
+    <ImageView
+        android:id="@+id/logo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/logo"/>
+        android:src="@drawable/logo"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,6 +59,8 @@
         android:textSize="20sp"
         android:fontFamily="sans-serif-condensed"
         android:textColor="@color/black"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"/>
 
-</LinearLayout>
+</RelativeLayout>
