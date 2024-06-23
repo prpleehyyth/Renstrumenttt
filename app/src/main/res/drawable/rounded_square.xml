@@ -8,5 +8,5 @@
         android:width="10dp"
         android:height="10dp"/>
     <!-- Define the radius for the corners to make them rounded -->
-    <corners android:radius="3dp"/>
+    <corners android:radius="10dp"/>
 </shape>
