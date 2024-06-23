@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Renstrument</string>
+    <string name="violin_name">Eastman</string>
+    <string name="saxophone_name">Paladin</string>
+    <string name="guitar_name">Collings</string>
+    <string name="maracas_name">Meinl</string>
+    <string name="violin2_name">Bach</string>
+    <string name="guitar2_name">Ibanez</string>
+    <string name="violin_desc">Andreas Eastman 305 Violin</string>
+    <string name="saxophone_desc">Saxophone Alto Gold</string>
+    <string name="guitar_desc">Collings 001 Acoustic Guitar</string>
+    <string name="maracas_desc">Meinl PM2BG Session Maracas</string>
+    <string name="violin2_desc">Bach SA200 306 Classic Violin</string>
+    <string name="guitar2_desc">Ibanez PF series Acoustic Guitar</string>
+    <string name="violin_price">Rp 250.000</string>
+    <string name="saxophone_price">Rp 100.000</string>
+    <string name="guitar_price">Rp 90.000</string>
+    <string name="maracas_price">Rp 50.000</string>
+    <string name="violin2_price">Rp 250.000</string>
+    <string name="guitar2_price">Rp 250.000</string>
 </resources>
