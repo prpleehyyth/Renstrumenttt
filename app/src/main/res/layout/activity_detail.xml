@@ -35,4 +35,31 @@
         android:textSize="16sp"
         android:textStyle="italic" />
 
+    <TextView
+        android:id="@+id/tvStock"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvMusicDetailPrice"
+        android:layout_marginTop="15dp"
+        android:paddingTop="8dp"
+        android:text="Stock" />
+
+    <EditText
+        android:id="@+id/editTextDays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonProceedToPayment"
+        android:layout_marginBottom="65dp"
+        android:hint="Enter number of days"
+        android:inputType="number"
+        android:paddingTop="16dp" />
+
+    <Button
+        android:id="@+id/buttonProceedToPayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="57dp"
+        android:paddingTop="16dp"
+        android:text="Proceed to Payment" />
 </RelativeLayout>
