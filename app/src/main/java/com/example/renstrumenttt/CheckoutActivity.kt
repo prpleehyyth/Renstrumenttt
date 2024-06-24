@@ -1,15 +1,14 @@
 package com.example.renstrumenttt
 
-import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.renstrumenttt.databinding.ActivityCheckoutBinding
 import com.google.firebase.firestore.FirebaseFirestore
-
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CheckoutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCheckoutBinding
@@ -34,7 +33,7 @@ class CheckoutActivity : AppCompatActivity() {
 
         // Setup proceed to rental history button
         binding.buttonProceedToHistory.setOnClickListener {
-            saveProofOfPaymentUrlToFirestore()
+            saveRentalDetailsToFirestore()
         }
     }
 
@@ -52,18 +51,19 @@ class CheckoutActivity : AppCompatActivity() {
         // Set rental dates (today as start date and calculated end date)
         val startDate = System.currentTimeMillis()
         val endDate = startDate + days * 24 * 60 * 60 * 1000L // Calculate end date
-        binding.textViewStartDate.text = "Start Date: ${java.text.SimpleDateFormat("yyyy-MM-dd").format(startDate)}"
-        binding.textViewEndDate.text = "End Date: ${java.text.SimpleDateFormat("yyyy-MM-dd").format(endDate)}"
+        binding.textViewStartDate.text = "Start Date: ${SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(startDate)}"
+        binding.textViewEndDate.text = "End Date: ${SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(endDate)}"
     }
 
-    private fun saveProofOfPaymentUrlToFirestore() {
+    private fun saveRentalDetailsToFirestore() {
         val startDate = System.currentTimeMillis()
         val endDate = startDate + days * 24 * 60 * 60 * 1000L
 
         val rentalDetails = hashMapOf(
             "instrumentName" to instrument.name,
-            "rentalStartDate" to startDate,
-            "rentalEndDate" to endDate,
+            "imageUrl" to instrument.imageUrl,
+            "rentalStartDate" to SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(startDate),
+            "rentalEndDate" to SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(endDate),
             "paymentMethod" to paymentMethod,
             "rentalDays" to days,
             "totalPrice" to totalPrice

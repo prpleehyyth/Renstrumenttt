@@ -1,10 +1,12 @@
 package com.example.renstrumenttt
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.renstrumenttt.databinding.ActivityRentalHistoryBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QueryDocumentSnapshot
 
 class RentalHistoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRentalHistoryBinding
@@ -30,7 +32,7 @@ class RentalHistoryActivity : AppCompatActivity() {
             .addOnSuccessListener { result ->
                 rentalHistoryList.clear()
                 for (document in result) {
-                    val rentalHistory = document.toObject(RentalHistory::class.java)
+                    val rentalHistory = document.toRentalHistory()
                     rentalHistoryList.add(rentalHistory)
                 }
                 adapter.notifyDataSetChanged()
@@ -38,5 +40,16 @@ class RentalHistoryActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 // Handle the error
             }
+    }
+
+    private fun QueryDocumentSnapshot.toRentalHistory(): RentalHistory {
+        return RentalHistory(
+            instrumentName = getString("instrumentName") ?: "",
+            imageUrl = getString("imageUrl") ?: "",
+            rentalStartDate = getString("rentalStartDate") ?: "",
+            rentalEndDate = getString("rentalEndDate") ?: "",
+            rentalDays = getLong("rentalDays")?.toInt() ?: 0,
+            totalPrice = getDouble("totalPrice") ?: 0.0
+        )
     }
 }
