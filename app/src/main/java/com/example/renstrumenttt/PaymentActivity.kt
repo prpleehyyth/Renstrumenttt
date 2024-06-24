@@ -24,11 +24,11 @@ class PaymentActivity : AppCompatActivity() {
 
         // Setup payment options
         binding.buttonCreditCard.setOnClickListener {
-            proceedToCheckout("Credit Card")
+            proceedToCheckout("BCA")
         }
 
         binding.buttonPaypal.setOnClickListener {
-            proceedToCheckout("Paypal")
+            proceedToCheckout("BNI")
         }
 
         // Add more payment options as needed

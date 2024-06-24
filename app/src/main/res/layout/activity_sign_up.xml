@@ -31,17 +31,17 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:layout_width="102dp"
-        android:layout_height="27dp"
+        android:layout_width="121dp"
+        android:layout_height="32dp"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif-condensed"
         android:text="Rentstrument"
         android:textColor="@color/black"
         android:textSize="20sp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="252dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="247dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailLayout"
