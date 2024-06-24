@@ -19,13 +19,16 @@
         android:id="@+id/buttonCreditCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Credit Card"/>
+        android:background="@drawable/rounded_square"
+        android:text="BCA"/>
 
     <Button
         android:id="@+id/buttonPaypal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Paypal"/>
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_square"
+        android:text="BNI"/>
 
     <!-- Add more payment options as needed -->
 </LinearLayout>

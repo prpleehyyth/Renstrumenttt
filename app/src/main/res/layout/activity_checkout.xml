@@ -21,9 +21,9 @@
         <ImageView
             android:id="@+id/imageViewInstrument"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:contentDescription="Instrument Image"/>
+            android:layout_height="230dp"
+            android:contentDescription="Instrument Image"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/textViewDays"
@@ -61,24 +61,12 @@
             android:text="End Date"/>
 
         <Button
-            android:id="@+id/buttonUploadProof"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Upload Proof of Payment"
-            android:paddingTop="16dp"/>
-
-        <ImageView
-            android:id="@+id/imageViewProof"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:paddingTop="16dp"/>
-
-        <Button
             android:id="@+id/buttonProceedToHistory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="220dp"
+            android:background="@drawable/rounded_square"
             android:text="Proceed to Rental History"
-            android:paddingTop="16dp"/>
+            android:paddingTop="16dp" />
     </LinearLayout>
 </ScrollView>

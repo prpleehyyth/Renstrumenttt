@@ -1,12 +1,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    >
+
 
     <ImageView
         android:id="@+id/ivMusicDetailImage"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:scaleType="centerCrop" />
 
     <TextView
@@ -32,17 +34,34 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvMusicDetailDesc"
         android:layout_marginTop="8dp"
-        android:textSize="16sp"
+        android:textSize="25sp"
+        android:textColor="@color/red"
         android:textStyle="italic" />
 
-    <TextView
-        android:id="@+id/tvStock"
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvMusicDetailPrice"
-        android:layout_marginTop="15dp"
-        android:paddingTop="8dp"
-        android:text="Stock" />
+    <FrameLayout
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_square" />
+
+        <TextView
+            android:id="@+id/tvStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:padding="8dp"
+            android:text="Stock :"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="left"/>
+    </FrameLayout>
 
     <EditText
         android:id="@+id/editTextDays"
@@ -56,10 +75,14 @@
 
     <Button
         android:id="@+id/buttonProceedToPayment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="57dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/rounded_square"
         android:paddingTop="16dp"
-        android:text="Proceed to Payment" />
+        android:gravity="center"
+        android:text="Rent Now"
+        android:textAlignment="center" />
 </RelativeLayout>
