@@ -36,7 +36,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="375dp"
         android:layout_height="583dp"
-        android:layout_above="@id/bottomNavView"
+        android:layout_above="@id/bottomNavigation"
         android:layout_below="@id/searchView"
         android:layout_marginTop="38dp"
         android:padding="15dp" />
