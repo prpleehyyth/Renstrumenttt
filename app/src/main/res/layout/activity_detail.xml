@@ -64,11 +64,20 @@
     </FrameLayout>
 
     <EditText
+        android:id="@+id/editTextQuantity"
+        android:layout_width="395dp"
+        android:layout_height="61dp"
+        android:layout_below="@+id/tvMusicDetailPrice"
+        android:layout_marginTop="12dp"
+        android:hint="Enter quantity to rent"
+        android:inputType="number" />
+
+    <EditText
         android:id="@+id/editTextDays"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonProceedToPayment"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="33dp"
         android:hint="Enter number of days"
         android:inputType="number"
         android:paddingTop="16dp" />
@@ -79,10 +88,10 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="110dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="42dp"
         android:background="@drawable/rounded_square"
-        android:paddingTop="16dp"
         android:gravity="center"
+        android:paddingTop="16dp"
         android:text="Rent Now"
         android:textAlignment="center" />
 </RelativeLayout>

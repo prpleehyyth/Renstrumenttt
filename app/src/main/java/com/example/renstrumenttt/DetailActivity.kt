@@ -41,14 +41,20 @@ class DetailActivity : AppCompatActivity() {
 
     private fun proceedToPayment() {
         val days = binding.editTextDays.text.toString().toIntOrNull()
+        val quantity = binding.editTextQuantity.text.toString().toIntOrNull()
 
-        if (days != null && days > 0) {
-            val intent = Intent(this, PaymentActivity::class.java)
-            intent.putExtra("instrument", instrument)
-            intent.putExtra("days", days)
-            startActivity(intent)
+        if (days != null && days > 0 && quantity != null && quantity > 0) {
+            if (quantity <= instrument.stock) {
+                val intent = Intent(this, PaymentActivity::class.java)
+                intent.putExtra("instrument", instrument)
+                intent.putExtra("days", days)
+                intent.putExtra("quantity", quantity)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Not enough stock available", Toast.LENGTH_SHORT).show()
+            }
         } else {
-            Toast.makeText(this, "Please enter a valid number of days", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please enter valid number of days and quantity", Toast.LENGTH_SHORT).show()
         }
     }
 }

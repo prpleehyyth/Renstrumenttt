@@ -47,4 +47,13 @@
         android:layout_height="wrap_content"
         android:paddingTop="4dp"
         android:text="Total Price"/>
+
+    <android.widget.Button
+        android:id="@+id/buttonViewInvoice"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTotalPrice"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/rounded_square"
+        android:text="Lihat Struk" />
 </LinearLayout>

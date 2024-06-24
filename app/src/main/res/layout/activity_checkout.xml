@@ -33,6 +33,13 @@
             android:text="Rental Duration"/>
 
         <TextView
+            android:id="@+id/textViewQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:text="Quantity"/>
+
+        <TextView
             android:id="@+id/textViewTotalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -49,6 +49,7 @@ class RentalHistoryActivity : AppCompatActivity() {
             rentalStartDate = getString("rentalStartDate") ?: "",
             rentalEndDate = getString("rentalEndDate") ?: "",
             rentalDays = getLong("rentalDays")?.toInt() ?: 0,
+            paymentMethod = getString("paymentMethod")?:"",
             totalPrice = getDouble("totalPrice") ?: 0.0
         )
     }

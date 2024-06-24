@@ -14,6 +14,7 @@ class CheckoutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCheckoutBinding
     private lateinit var instrument: Instrument
     private var days: Int = 0
+    private var quantity: Int = 0
     private var paymentMethod: String = ""
     private var totalPrice: Double = 0.0
     private val firestore = FirebaseFirestore.getInstance()
@@ -26,6 +27,7 @@ class CheckoutActivity : AppCompatActivity() {
         // Retrieve the instrument data from the intent
         instrument = intent.getParcelableExtra("instrument") ?: Instrument()
         days = intent.getIntExtra("days", 0)
+        quantity = intent.getIntExtra("quantity", 0)
         paymentMethod = intent.getStringExtra("paymentMethod") ?: ""
 
         // Set checkout details
@@ -47,6 +49,7 @@ class CheckoutActivity : AppCompatActivity() {
         totalPrice = days * instrument.pricePerDay
         binding.textViewTotalPrice.text = "Total Price: $%.2f".format(totalPrice)
         binding.textViewPaymentMethod.text = "Payment Method: $paymentMethod"
+        binding.textViewQuantity.text = "Quantity: $quantity"
 
         // Set rental dates (today as start date and calculated end date)
         val startDate = System.currentTimeMillis()
@@ -66,17 +69,46 @@ class CheckoutActivity : AppCompatActivity() {
             "rentalEndDate" to SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(endDate),
             "paymentMethod" to paymentMethod,
             "rentalDays" to days,
+            "quantity" to quantity,
             "totalPrice" to totalPrice
         )
 
         firestore.collection("rentalHistory")
             .add(rentalDetails)
             .addOnSuccessListener {
-                proceedToRentalHistory()
+                updateInstrumentStock()
             }
             .addOnFailureListener { exception ->
                 Toast.makeText(this, "Failed to save rental details: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
+    }
+
+    private fun updateInstrumentStock() {
+        val instrumentRefs = listOf(
+            firestore.collection("Instrument").document("alat1"),
+            firestore.collection("Instrument").document("alat2")
+        )
+
+        for (instrumentRef in instrumentRefs) {
+            instrumentRef.get().addOnSuccessListener { document ->
+                if (document != null) {
+                    val currentStock = document.getLong("stock") ?: 0L
+                    val newStock = currentStock - quantity
+
+                    instrumentRef.update("stock", newStock)
+                        .addOnSuccessListener {
+                            proceedToRentalHistory()
+                        }
+                        .addOnFailureListener { exception ->
+                            Toast.makeText(this, "Failed to update stock: ${exception.message}", Toast.LENGTH_SHORT).show()
+                        }
+                } else {
+                    Toast.makeText(this, "Document does not exist!", Toast.LENGTH_SHORT).show()
+                }
+            }.addOnFailureListener { exception ->
+                Toast.makeText(this, "Failed to get document: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun proceedToRentalHistory() {
