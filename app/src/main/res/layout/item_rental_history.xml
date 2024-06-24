@@ -54,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewTotalPrice"
         android:layout_alignParentEnd="true"
+        android:textColor="@color/white"
         android:background="@drawable/rounded_square"
         android:text="Lihat Struk" />
 </LinearLayout>

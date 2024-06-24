@@ -22,6 +22,7 @@
             android:id="@+id/imageViewInstrument"
             android:layout_width="match_parent"
             android:layout_height="230dp"
+            android:background="@drawable/border"
             android:contentDescription="Instrument Image"
             android:scaleType="centerCrop" />
 
@@ -67,13 +68,16 @@
             android:paddingTop="8dp"
             android:text="End Date"/>
 
-        <Button
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonProceedToHistory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="220dp"
+            android:textColor="@color/white"
             android:background="@drawable/rounded_square"
             android:text="Proceed to Rental History"
             android:paddingTop="16dp" />
+
     </LinearLayout>
 </ScrollView>
