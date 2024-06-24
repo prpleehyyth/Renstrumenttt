@@ -1,5 +1,6 @@
 package com.example.renstrumenttt
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,7 @@ class RentalHistoryActivity : AppCompatActivity() {
         binding.recyclerViewRentalHistory.adapter = adapter
 
         fetchRentalHistoryFromFirestore()
+        setupBottomNavigationView()
     }
 
     private fun fetchRentalHistoryFromFirestore() {
@@ -52,5 +54,21 @@ class RentalHistoryActivity : AppCompatActivity() {
             paymentMethod = getString("paymentMethod")?:"",
             totalPrice = getDouble("totalPrice") ?: 0.0
         )
+    }
+
+    private fun setupBottomNavigationView() {
+        binding.bottomNavigation.selectedItemId = R.id.bottom_history
+
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_history -> true
+                R.id.bottom_home     -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                    true
+                }
+                else -> false
+            }
+        }
     }
 }

@@ -9,8 +9,8 @@ import androidx.appcompat.widget.SearchView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.renstrumenttt.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -28,8 +28,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         setupRecyclerView()
         loadInstruments()
+        setupBottomNavigationView()
     }
 
     private fun setupRecyclerView() {
@@ -39,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.recyclerView.apply {
-            layoutManager = GridLayoutManager(this@MainActivity,2)
+            layoutManager = GridLayoutManager(this@MainActivity, 2)
             adapter = this@MainActivity.adapter
         }
     }
@@ -54,6 +56,22 @@ class MainActivity : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
             } catch (e: Exception) {
                 // Handle error loading instruments
+            }
+        }
+    }
+
+    private fun setupBottomNavigationView() {
+        binding.bottomNavigation.selectedItemId = R.id.bottom_home
+
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_home -> true
+                R.id.bottom_history -> {
+                    startActivity(Intent(this, RentalHistoryActivity::class.java))
+                    finish()
+                    true
+                }
+                else -> false
             }
         }
     }
